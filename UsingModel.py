@@ -52,6 +52,28 @@ class StringListModel(QtCore.QAbstractListModel):
     #     return True
 
 
+class SpinBoxDelegate(QtWidgets.QStyledItemDelegate):
+    def __init__(self):
+        super().__init__()
+
+    def createEditor(self, parent, option, index):
+        editor = QtWidgets.QSpinBox()
+        editor.setFrame(False)
+        editor.setMinimum(0)
+        editor.setMaximum(0)
+
+        return editor
+
+    def setEditor(self, editor, index):
+        psss
+
+    def setModelData(self, editor, model, index):
+        pass
+
+    def updateEidtorGemetry(self, editor, option, index):
+        pass
+
+
 app = QtWidgets.QApplication([])
 numbers = "One Two Three Four Five".split(" ")
 model = StringListModel(numbers)
